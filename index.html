@@ -3,50 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Requerimientos de Compra</title>
+    <title>Belleza360 - Registro de Compra</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="form-container">
-      <h2>Requerimientos de Compra</h2>
-      <form>
-        <div class="form-group">
-          <label for="nombre">Nombre de quien compra:</label>
-          <input type="text" id="nombre" name="nombre" required />
-        </div>
-        <div class="form-group">
-          <label for="presupuesto">Presupuesto máximo:</label>
-          <input type="number" id="presupuesto" name="presupuesto" required />
-        </div>
-        <div class="form-group">
-          <label for="cantidad">Cantidad de artículos máxima:</label>
-          <input type="number" id="cantidad" name="cantidad" required />
-        </div>
-        <div class="form-group">
-          <label for="direccion">Dirección:</label>
-          <input type="text" id="direccion" name="direccion" required />
-        </div>
-        <div class="form-group">
-          <label>Tipo de entrega:</label>
-          <div class="radio-group">
-            <label
-              ><input type="radio" name="entrega" value="domicilio" required />
-              Domicilio</label
-            >
-            <label
-              ><input type="radio" name="entrega" value="tienda" />
-              Tienda</label
-            >
-          </div>
-        </div>
-        <div class="buttons">
-          <button type="submit" class="submit-btn">Iniciar compra</button>
-          <button type="reset" class="reset-btn">Limpiar campos</button>
-        </div>
-      </form>
+    <div class="header">
+      <img src="mi logo.png" alt="Logo" class="logo" />
+      <div class="titles">
+        <h1>Belleza360</h1>
+        <h2>Registro de Compra</h2>
+      </div>
     </div>
 
-    <script src="peluqeria.Js"></script>
-    <script src="data.js"></script>
+    <div class="form-container">
+      <form id="compraForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" maxlength="20" required />
+
+        <label for="presupuesto">Presupuesto (en pesos):</label>
+        <input type="number" id="presupuesto" min="0" required />
+
+        <label for="cantidad">Cantidad de productos:</label>
+        <input type="number" id="cantidad" min="1" max="20" required />
+
+        <label for="direccion">Dirección de entrega:</label>
+        <input type="text" id="direccion" required />
+
+        <label for="tipoEntrega">Tipo de Entrega:</label>
+        <select id="tipoEntrega" required>
+          <option value="">Seleccione una opción</option>
+          <option value="domicilio">A Domicilio</option>
+          <option value="retiro">Retiro en tienda</option>
+        </select>
+
+        <button type="button" class="primary-btn" id="registrarCompraBtn">
+          Registrar Compra
+        </button>
+        <button type="reset" class="secondary-btn">Limpiar Campos</button>
+      </form>
+    </div>
+    <script src="peluqeria.js"></script>
   </body>
 </html>
