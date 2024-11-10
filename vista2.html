@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estilo y Cuidado Personal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-logo-title">
+        <img src="mi logo.png" alt="Logo de Belleza360" class="logo" />
+        <h1 class="navbar-title">Belleza360</h1>
+      </div>
+      <div class="nav-buttons">
+        <button onclick="cancelarCompra()">Cancelar Compra</button>
+        <button onclick="completarCompra()">Completar Compra</button>
+      </div>
+    </nav>
+
+    <section class="filtros">
+      <label for="filtroCategoria">Categoría:</label>
+      <select id="filtroCategoria">
+        <option value="todos">Todas</option>
+        <option value="champús">Champús</option>
+        <option value="acondicionadores">Acondicionadores</option>
+        <option value="geles">Geles</option>
+        <option value="ceras">Ceras</option>
+        <option value="sprays">Sprays</option>
+        <option value="espumas">Espumas</option>
+        <option value="mascarillas">Mascarillas</option>
+        <option value="aceites">Aceites</option>
+        <option value="cepillos">Cepillos</option>
+        <option value="peines">Peines</option>
+        <option value="lacas">Lacas</option>
+        <option value="cremas">Cremas</option>
+      </select>
+
+      <label for="filtroTipo">Tipo:</label>
+      <select id="filtroTipo">
+        <option value="todos">Todos</option>
+        <option value="cuidado capilar">Cuidado Capilar</option>
+        <option value="estilización">Estilización</option>
+        <option value="acabado">Acabado</option>
+        <option value="accesorio">Accesorio</option>
+      </select>
+
+      <button onclick="filtrarProductos()">Filtrar</button>
+      <button onclick="limpiarFiltros()">Limpiar Filtros</button>
+    </section>
+
+    <h2 class="productos-titulo">Explora nuestra selección de productos</h2>
+
+    <main class="main-container">
+      <div id="productosLista" class="productos-lista"></div>
+
+      <section id="detalleProducto" class="hidden">
+        <h2>Detalles del Producto</h2>
+        <img id="detalleImagen" src="" alt="Imagen del Producto" />
+        <p id="detalleNombre" data-id="">Nombre del Producto</p>
+        <p id="detallePrecio">Precio: $0.00</p>
+        <p id="detalleDescripcion">Descripción:</p>
+        <p id="detalleCategoria">Categoría:</p>
+        <p id="detalleTipo">Tipo:</p>
+        <p id="detalleMarca">Marca:</p>
+        <label for="cantidadProducto">Cantidad:</label>
+        <input type="number" id="cantidadProducto" value="1" min="1" />
+        <button onclick="agregarAlCarrito()">Agregar al Carrito</button>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="peluqeria.js"></script>
+  </body>
+</html>
